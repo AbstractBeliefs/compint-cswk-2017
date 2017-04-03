@@ -13,13 +13,15 @@ public class EvolutionaryTrainer extends NeuralNetwork {
         String dataSet;
         if (args.length >= 1) {
             dataSet = args[0];
-            Parameters.setDataSet(dataSet);
         } else {
             dataSet = "A";
         }
         Parameters.setDataSet(dataSet);
         if (args.length >= 3) {
+            if (args[1].equals("hiddennodes")) { Parameters.numHidden = Integer.parseInt(args[2]); }
             if (args[1].equals("activation")) { Parameters.activationFunction = args[2]; }
+            if (args[1].equals("mutateRate")) { Parameters.mutateRate = Double.parseDouble(args[2]); }
+            if (args[1].equals("mutateChange")) { Parameters.mutateChange = Double.parseDouble(args[2]); }
         }
 
         //System.out.println("\nThe training data is:");
