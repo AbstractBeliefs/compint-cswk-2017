@@ -31,7 +31,7 @@ public class NeuralNetwork {
         Parameters.numGenes = (this.numInput * this.numHidden) + (this.numHidden * this.numOutput) + this.numHidden
                 + this.numOutput; // = numGenes
 
-        System.out.println("Creating a " + numInput + "-" + numHidden + "-" + numOutput + " neural network");
+        //System.out.println("Creating a " + numInput + "-" + numHidden + "-" + numOutput + " neural network");
     }
 
     private static double[][] makeMatrix(int rows, int cols) {

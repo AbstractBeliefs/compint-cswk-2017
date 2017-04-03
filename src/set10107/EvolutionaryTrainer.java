@@ -13,41 +13,41 @@ public class EvolutionaryTrainer extends NeuralNetwork {
         String dataSet = "A";
         Parameters.setDataSet(dataSet);
 
-        System.out.println("\nThe training data is:");
-        showMatrix(Parameters.trainData, Parameters.trainData.length, 1, true);
+        //System.out.println("\nThe training data is:");
+        //showMatrix(Parameters.trainData, Parameters.trainData.length, 1, true);
 
-        System.out.println("The test data is:");
-        showMatrix(Parameters.testData, Parameters.testData.length, 1, true);
+        //System.out.println("The test data is:");
+        //showMatrix(Parameters.testData, Parameters.testData.length, 1, true);
 
         /**
          * train the NN using our EA
          */
         EvolutionaryTrainer nn = new EvolutionaryTrainer();
-        System.out.println("\nBeginning training");
+        //System.out.println("\nBeginning training");
         double[] bestWeights = nn.train();
 
         /**
          * Show best weights found
          */
-        System.out.println("Training complete");
-        System.out.println("\nFinal weights and bias values:");
-        showVector(bestWeights, 10, 3, true);
+        //System.out.println("Training complete");
+        //System.out.println("\nFinal weights and bias values:");
+        //showVector(bestWeights, 10, 3, true);
 
         /**
          * Show accuracy on training data
          */
         nn.setWeights(bestWeights);
         double trainAcc = nn.testNetwork(Parameters.trainData);
-        System.out.print("\nAccuracy on training data = ");
+        System.out.print("Accuracy on training data = ");
         System.out.println(trainAcc);
 
         /**
          * Show accuracy on unseen test data
          */
         double testAcc = nn.testNetwork(Parameters.testData);
-        System.out.print("\nAccuracy on test data = ");
+        System.out.print("Accuracy on test data = ");
         System.out.println(testAcc);
-        System.out.println("\nEnd NN training demo");
+        //System.out.println("\nEnd NN training demo");
 
     }
 
@@ -94,7 +94,7 @@ public class EvolutionaryTrainer extends NeuralNetwork {
             //check that the best hasn't improved
             bestIndividual = getBest(population);
 
-            System.out.println(gen + "\t" + bestIndividual);
+            //System.out.println(gen + "\t" + bestIndividual);
 
             //check our termination criteria
             if (bestIndividual.error < Parameters.exitError) {
