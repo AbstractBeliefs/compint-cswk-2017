@@ -122,6 +122,22 @@ public class NeuralNetwork {
         return retResult;
     } // ComputeOutputs
 
+    private double activationFunction(double x){
+        if (Parameters.activationFunction.equals("tanh")){ return hyperTanFunction(x); }
+        if (Parameters.activationFunction.equals("step")){ return step(x); }
+        if (Parameters.activationFunction.equals("linear")){ return linear(x); }
+
+        return 0;
+    }
+
+    private static double step(double x) {
+        // Step function at 0
+        return x >= 0 ? 1 : -1;
+    }
+    private static double linear(double x) {
+        // Smoothly scale between -1 and 1
+        return x / 20;
+    }
     private static double hyperTanFunction(double x) {
         if (x < -20.0)
             return -1.0;
