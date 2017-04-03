@@ -38,14 +38,14 @@ public class EvolutionaryTrainer extends NeuralNetwork {
          */
         nn.setWeights(bestWeights);
         double trainAcc = nn.testNetwork(Parameters.trainData);
-        System.out.print("Accuracy on training data = ");
-        System.out.println(trainAcc);
+        //System.out.print("training accuracy: ");
+        System.out.print(trainAcc);
+        System.out.print(", ");
 
         /**
          * Show accuracy on unseen test data
          */
         double testAcc = nn.testNetwork(Parameters.testData);
-        System.out.print("Accuracy on test data = ");
         System.out.println(testAcc);
         //System.out.println("\nEnd NN training demo");
 
