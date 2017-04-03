@@ -187,7 +187,17 @@ public class EvolutionaryTrainer extends NeuralNetwork {
      * Not Implemented
      */
     private void mutate(Individual child) {
+        for (int i = 0; i < child.chromosome.length; i++){
+            Boolean mutate = Parameters.random.nextFloat() < Parameters.mutateRate;
+            if (mutate){
+                // Get a number in the range of 0-2mutateChange, then subtract mutateChange to normalise to +-mutateChange
+                child.chromosome[i] += (Parameters.random.nextFloat() * (Parameters.mutateChange*2)) - Parameters.mutateChange;
 
+                // Ensure we didn't exceed gene range
+                child.chromosome[i] = Math.min(Parameters.maxGene, child.chromosome[i]);
+                child.chromosome[i] = Math.max(Parameters.minGene, child.chromosome[i]);
+            }
+        }
     }
 
     /**
