@@ -175,7 +175,7 @@ public class EvolutionaryTrainer extends NeuralNetwork {
             child1.chromosome[i] = parent1.chromosome[i];
 
         for (int i = 0; i < numGenes; ++i)
-            child1.chromosome[i] = parent2.chromosome[i];
+            child2.chromosome[i] = parent2.chromosome[i];
 
         mutate(child1);
         mutate(child2);
